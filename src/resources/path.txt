@@ -1,1 +1,1 @@
-C:\Users\Anton\Desktop\Стажировка Учебный материалы\students.csv
+src/resources/students.csv
