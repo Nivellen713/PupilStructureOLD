@@ -2,63 +2,49 @@ package DataGroups;
 
 import Structures.Person;
 
-import java.util.Arrays;
-
 // Класс-наследник для хранения данных по имени
-public class PersonNameDataGroup extends DataGroups{
-    private final String firstLetter;
-    private int firstEmptyElemIndex = 0;
-    private Person[] persons = new Person[1000];
+public class PersonNameDataGroup implements IDataGroups {
+    private final int SIZE = 1000;
+    private final int LETTERS_AMOUNT = 33; // количество букв (от А до Я)
+    Person[][] persons = new Person[LETTERS_AMOUNT][SIZE];
 
-    public PersonNameDataGroup(String firstLetter) {
-        this.firstLetter = firstLetter;
-    }
-
-    // Проверяем подходит ли ученик для данной группы элементов,
-    // также увеличиваем хранилище на 1000 в случае его заполненности
     @Override
     public void addPerson(Person person) {
-        if(person.getLastName().startsWith(firstLetter)) {
-            if (firstEmptyElemIndex < persons.length - 1) {
-                persons[firstEmptyElemIndex] = person;
-                firstEmptyElemIndex++;
-            } else {
-                Person[] bufferPersons = persons;
-                persons = new Person[bufferPersons.length + 1000];
-                System.arraycopy(bufferPersons, 0, persons, 0, bufferPersons.length);
-
-                persons[firstEmptyElemIndex] = person;
-                firstEmptyElemIndex++;
-            }
-        } else {
-            System.out.printf("Фамилия ученика начинается с  %s. Здесь фамилия должна начинаться с %s%n"
-                    , person.getLastName(), firstLetter);
+        int ageIndex = parseKeyToIndex(person.getLastName().charAt(0));
+        int firstNullIndex = getFirstNullIndex(persons[ageIndex]);
+        if (firstNullIndex == persons[ageIndex].length) {
+            persons[ageIndex] = increaseArray(persons[ageIndex]);
         }
-    }
-
-    // удаляем нулевые элементы
-    private void cutNullElements() {
-        int indexOfNullElem = persons.length - 1;
-        for (int i = persons.length - 1; persons[i] == null && i > 0; i--) {
-            indexOfNullElem = i;
-        }
-        Person[] bufferPersons = persons;
-        persons = new Person[indexOfNullElem];
-        System.arraycopy(bufferPersons, 0, persons, 0, indexOfNullElem);
+        persons[ageIndex][firstNullIndex] = person;
     }
 
     @Override
-    public Person[] getPersons() {
-        cutNullElements();
+    public Person[][] getPersons() {
         return persons;
     }
 
     @Override
-    public String toString() {
-        return "PersonNameDataGroup{" +
-                ", firstLetter='" + firstLetter + '\'' +
-                ", firstEmptyElemIndex=" + firstEmptyElemIndex +
-                ", persons=" + Arrays.toString(getPersons()) +
-                '}';
+    public int parseKeyToIndex(int key) {
+        return key - 1040; // (int) 'А' = 1040
+    }
+
+    public Person[] getByLastName(String lastName) {
+        int firstLetterIndex = parseKeyToIndex(lastName.charAt(0));
+        Person[] lastNamePersons = new Person[SIZE];
+        int lastNullIndex = 0;
+        for (int i = 0; i < persons[firstLetterIndex].length; i++) {
+            if (persons[firstLetterIndex][i] != null && persons[firstLetterIndex][i].getLastName().equals(lastName)) {
+                lastNamePersons[lastNullIndex] = persons[firstLetterIndex][i];
+                lastNullIndex++;
+            }
+        }
+        return cutNullElements(lastNamePersons);
+    }
+
+    private Person[] cutNullElements(Person[] people) {
+        int firstNullIndex = getFirstNullIndex(people);
+        Person[] peopleWithoutNulls = new Person[firstNullIndex];
+        System.arraycopy(people, 0, peopleWithoutNulls, 0, peopleWithoutNulls.length);
+        return peopleWithoutNulls;
     }
 }

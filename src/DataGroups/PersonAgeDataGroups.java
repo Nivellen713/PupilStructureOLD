@@ -2,62 +2,69 @@ package DataGroups;
 
 import Structures.Person;
 
-import java.util.Arrays;
-
 // Класс-наследник для хранения данных по возрасту
-public class PersonAgeDataGroups extends DataGroups{
-    private final int age;
-    private int firstEmptyElem = 0;
-    private Person[] persons = new Person[1000];
+public class PersonAgeDataGroups implements IDataGroups {
+    private final int SIZE = 1000;
+    private final int AGES_AMOUNT = 13;  // количество возрастов (от 5 до 17 включительно)
+    Person[][] persons = new Person[AGES_AMOUNT][SIZE];
 
-    public PersonAgeDataGroups(int age) {
-        this.age = age;
-    }
-
-    // Проверяем подходит ли ученик для данной группы элементов,
-    // также увеличиваем хранилище на 1000 в случае его заполненности
     @Override
     public void addPerson(Person person) {
-        if(person.getAge() == age) {
-            if (firstEmptyElem < persons.length - 1) {
-                persons[firstEmptyElem] = person;
-                firstEmptyElem++;
-            } else {
-                Person[] bufferPersons = persons;
-                persons = new Person[bufferPersons.length + 1000];
-                System.arraycopy(bufferPersons, 0, persons, 0, bufferPersons.length);
-
-                persons[firstEmptyElem] = person;
-                firstEmptyElem++;
-            }
-        } else {
-            System.out.printf("Ученик возраста %d. Здесь возраст %d%n", person.getGroup(), age);
+        int ageIndex = parseKeyToIndex(person.getAge());
+        int firstNullIndex = getFirstNullIndex(persons[ageIndex]);
+        if (firstNullIndex == persons[ageIndex].length) {
+            persons[ageIndex] = increaseArray(persons[ageIndex]);
         }
-    }
-
-    // обрезаем все нулевые элементы
-    private void cutNullElements() {
-        int indexOfNullElem = persons.length - 1;
-        for (int i = persons.length - 1; persons[i] == null && i > 0; i--) {
-            indexOfNullElem = i;
-        }
-        Person[] bufferPersons = persons;
-        persons = new Person[indexOfNullElem];
-        System.arraycopy(bufferPersons, 0, persons, 0, indexOfNullElem);
+        persons[ageIndex][firstNullIndex] = person;
     }
 
     @Override
-    public Person[] getPersons() {
-        cutNullElements();
+    public Person[][] getPersons() {
         return persons;
     }
 
     @Override
-    public String toString() {
-        return "PersonAgeDataGroups{" +
-                ", age=" + age +
-                ", firstEmptyElem=" + firstEmptyElem +
-                ", persons=" + Arrays.toString(getPersons()) +
-                '}';
+    public int parseKeyToIndex(int key) {
+        return key - 5;
+    }
+
+    private Person[][] getPersonOlderThan(int age) {
+        int ageIndex = parseKeyToIndex(age);
+        int amountAgesGroups = AGES_AMOUNT - ageIndex;    // Количество возрастов от искомого до максимального
+        Person[][] personsOlderThan = new Person[amountAgesGroups][SIZE];
+        System.arraycopy(persons, ageIndex, personsOlderThan, 0, personsOlderThan.length);
+        return personsOlderThan;
+    }
+
+    public Person[] getExcellentOlderThan(int age){
+        Person[][] olderAgePersons = getPersonOlderThan(age);
+        Person[] excellentPersons = new Person[SIZE];
+        int firstNullIndex = 0;
+        for (Person[] olderAgePerson : olderAgePersons) {
+            for (Person agePerson : olderAgePerson) {
+                if (agePerson != null && isExcellentRating(agePerson.getRating())) {
+                    excellentPersons[firstNullIndex] = agePerson;
+                    firstNullIndex++;
+                }
+            }
+        }
+        return cutNullElements(excellentPersons);
+    }
+
+    private Person[] cutNullElements(Person[] people) {
+        int firstNullIndex = getFirstNullIndex(people);
+        Person[] peopleWithoutNulls = new Person[firstNullIndex];
+        System.arraycopy(people, 0, peopleWithoutNulls, 0, peopleWithoutNulls.length);
+        return peopleWithoutNulls;
+    }
+
+    private boolean isExcellentRating(String[] rating) {
+        int count = 0;
+        for (String str : rating) {
+            if (Integer.parseInt(str) == 5) {
+                count++;
+            }
+        }
+        return count == rating.length;
     }
 }

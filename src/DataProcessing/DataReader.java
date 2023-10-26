@@ -20,20 +20,18 @@ public class DataReader {
         }
     }
 
-    // добавляем всех учеников из файла без доп критериев,
-    // так как классы DataGroups сами определяеют добавлять им ученика или нет
-    public DataGroups addAllPerson(DataGroups dataGroups){
+    // добавляем всех учеников из файла без доп критериев
+    public void addAllPerson(IDataGroups dataGroup){
         try (BufferedReader reader = new BufferedReader(new FileReader(dataFilePath))) {
             String line;
             reader.readLine(); // пропускаем первую строку названий столбцов
             while ((line = reader.readLine()) != null) {
                 String[] csvLine = line.split(";");
-                dataGroups.addPerson(new Person(csvLine));
+                dataGroup.addPerson(new Person(csvLine));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return dataGroups;
     }
 
 }
