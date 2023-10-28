@@ -7,12 +7,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class DataReader {
+public class DataLoader implements IDataLoader{
 
     private String dataFilePath;
 
     // класс для заполнения списков данными (чтение из csv файла)
-    public DataReader() {
+    public DataLoader() {
         try (BufferedReader reader = new BufferedReader(new FileReader("src/resources/path.txt"))) {
             this.dataFilePath = reader.readLine();
         } catch (IOException e) {

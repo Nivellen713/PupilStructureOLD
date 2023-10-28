@@ -18,6 +18,26 @@ public class ClassroomDataGroups implements IDataGroups {
         persons[groupIndex][firstNullIndex] = person;
     }
 
+    //     вычисление средней оценки группы учеников
+    public double getAverageRating(int groupNum) {
+        double ratingSum = 0;
+        double ratingAmount = 0;
+        for (Person person : persons[parseKeyToIndex(groupNum)]) {
+            if(person != null) {
+                String[] rating = person.getRating();
+                for (String markStr : rating) {
+                    double markInt = Double.parseDouble(markStr);
+                    ratingSum += markInt;
+                    ratingAmount++;
+                }
+            }
+        }
+        if (ratingAmount == 0) {
+            ratingAmount++;
+        }
+        return ratingSum / ratingAmount;
+    }
+
     @Override
     public Person[][] getPersons() {
         return persons;
@@ -26,10 +46,6 @@ public class ClassroomDataGroups implements IDataGroups {
     @Override
     public int parseKeyToIndex(int key) {
         return key - 1;
-    }
-
-    public Person[] getPersonByGroup(int group) {
-        return persons[parseKeyToIndex(group)];
     }
 }
 
