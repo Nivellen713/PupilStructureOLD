@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e12b445-cf3e-412c-8608-0993025b711f" name="Changes" comment="Update data structure to two-dimensional array logic">
-      <change afterPath="$PROJECT_DIR$/src/CommandLineWork/CommandBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandLineWork/CommandLineIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandLineWork/ICommand.java" afterDir="false" />
+    <list default="true" id="9e12b445-cf3e-412c-8608-0993025b711f" name="Changes" comment="Add realisation 3-7 task from 2nd homework">
       <change afterPath="$PROJECT_DIR$/src/DataGroups/DataGroup.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/DataGroups/IGroupCriterion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataProcessing/IDataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataProcessing/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataGroups/ClassroomDataGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGroups/ClassroomDataGroups.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataProcessing/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataProcessing/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataProcessing/DataWork.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +87,8 @@
       <workItem from="1698298772843" duration="13278000" />
       <workItem from="1698399517654" duration="1202000" />
       <workItem from="1698412298778" duration="2340000" />
-      <workItem from="1698484056602" duration="8769000" />
+      <workItem from="1698484056602" duration="9208000" />
+      <workItem from="1698663085176" duration="2157000" />
     </task>
     <task id="LOCAL-00001" summary="Update complete project">
       <option name="closed" value="true" />
@@ -114,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698315263827</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add realisation 3-7 task from 2nd homework">
+      <option name="closed" value="true" />
+      <created>1698511372901</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698511372901</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update complete project" />
     <MESSAGE value="Update data structure to two-dimensional array logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update data structure to two-dimensional array logic" />
+    <MESSAGE value="Add realisation 3-7 task from 2nd homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add realisation 3-7 task from 2nd homework" />
   </component>
 </project>
