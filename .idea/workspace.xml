@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e12b445-cf3e-412c-8608-0993025b711f" name="Changes" comment="Add realisation 1-2 task from 2nd homework">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandLineWork/AverageRatingCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandLineWork/ExcellentOlderCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandLineWork/LastNameCommand.java" afterDir="false" />
+    <list default="true" id="9e12b445-cf3e-412c-8608-0993025b711f" name="Changes" comment="Update commands logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CommandLineWork/CommandBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandLineWork/CommandBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandLineWork/CommandLineIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandLineWork/ExcellentOlderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandLineWork/ExcellentOlderCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CommandLineWork/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandLineWork/ICommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandLineWork/LastNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandLineWork/LastNameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataGroups/ClassroomDataGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGroups/ClassroomDataGroups.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataGroups/DataGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGroups/DataGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataGroups/IDataGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGroups/IDataGroups.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataGroups/IGroupCriterion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGroups/IGroupCriterion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataGroups/PersonAgeDataGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGroups/PersonAgeDataGroups.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataGroups/PersonNameDataGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGroups/PersonNameDataGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataProcessing/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataProcessing/DataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataProcessing/IDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataProcessing/IDataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataProcessing/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataProcessing/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/path.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +111,8 @@
       <workItem from="1698484056602" duration="9208000" />
       <workItem from="1698663085176" duration="2234000" />
       <workItem from="1698666977016" duration="3401000" />
-      <workItem from="1698843145819" duration="3346000" />
+      <workItem from="1698843145819" duration="4117000" />
+      <workItem from="1698867882461" duration="2519000" />
     </task>
     <task id="LOCAL-00001" summary="Update complete project">
       <option name="closed" value="true" />
@@ -141,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698665295900</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update commands logic">
+      <option name="closed" value="true" />
+      <created>1698847938820</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698847938820</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +165,7 @@
     <MESSAGE value="Update data structure to two-dimensional array logic" />
     <MESSAGE value="Add realisation 3-7 task from 2nd homework" />
     <MESSAGE value="Add realisation 1-2 task from 2nd homework" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add realisation 1-2 task from 2nd homework" />
+    <MESSAGE value="Update commands logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update commands logic" />
   </component>
 </project>

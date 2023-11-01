@@ -8,13 +8,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 // класс для заполнения списков данными (чтение из csv файла)
-public class DataLoader implements IDataLoader{
+public class DataLoader implements IDataLoader {
 
     private final String DATA_FILE_PATH = "src/resources/students.csv";
 
 
     // добавляем всех учеников из файла без доп критериев
-    public void addAllPerson(IDataGroups dataGroup){
+    public void addAllPerson(IDataGroups dataGroup) {
         try (BufferedReader reader = new BufferedReader(new FileReader(DATA_FILE_PATH))) {
             String line;
             reader.readLine(); // пропускаем первую строку названий столбцов

@@ -19,11 +19,6 @@ public class PersonAgeDataGroups implements IDataGroups {
     }
 
     @Override
-    public Person[][] getPersons() {
-        return persons;
-    }
-
-    @Override
     public int parseKeyToIndex(int key) {
         return key - 5;
     }
@@ -36,7 +31,7 @@ public class PersonAgeDataGroups implements IDataGroups {
         return personsOlderThan;
     }
 
-    public Person[] getExcellentOlderThan(int age){
+    public Person[] getExcellentOlderThan(int age) {
         Person[][] olderAgePersons = getPersonOlderThan(age);
         Person[] excellentPersons = new Person[SIZE];
         int firstNullIndex = 0;

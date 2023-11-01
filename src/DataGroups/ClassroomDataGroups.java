@@ -23,7 +23,7 @@ public class ClassroomDataGroups implements IDataGroups {
         double ratingSum = 0;
         double ratingAmount = 0;
         for (Person person : persons[parseKeyToIndex(groupNum)]) {
-            if(person != null) {
+            if (person != null) {
                 String[] rating = person.getRating();
                 for (String markStr : rating) {
                     double markInt = Double.parseDouble(markStr);
@@ -36,11 +36,6 @@ public class ClassroomDataGroups implements IDataGroups {
             ratingAmount++;
         }
         return ratingSum / ratingAmount;
-    }
-
-    @Override
-    public Person[][] getPersons() {
-        return persons;
     }
 
     @Override

@@ -19,11 +19,6 @@ public class PersonNameDataGroup implements IDataGroups {
     }
 
     @Override
-    public Person[][] getPersons() {
-        return persons;
-    }
-
-    @Override
     public int parseKeyToIndex(int key) {
         return key - 1040; // (int) 'А' = 1040
     }

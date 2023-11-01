@@ -44,7 +44,7 @@ public class CommandBuilder {
         lastNameCommand.execute(studentService, parameter);
     }
 
-    private void getHelp(){
+    private void getHelp() {
         System.out.println("""
                 ar groupNum - возвращает среднюю оценку (ar - average rating) учеников "groupNum" группы
                 eo age - возвращает отличников старше (eo - excellent older) возраста "age"

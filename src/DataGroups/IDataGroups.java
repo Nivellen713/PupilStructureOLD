@@ -5,8 +5,6 @@ import Structures.Person;
 public interface IDataGroups {
     void addPerson(Person person);
 
-    Person[][] getPersons();
-
     int parseKeyToIndex(int key);
 
     default int getFirstNullIndex(Person[] persons) {
