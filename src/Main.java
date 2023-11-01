@@ -8,6 +8,6 @@ public class Main {
     // eo age - возвращает отличников старше (eo - excellent older) возраста "age"
     // ln lastName - возвращает учеников с фамилией (ln -lastname) "lastName"
     public static void main(String[] args) {
-        new CommandBuilder().getResultByUserCommand();
+        new CommandBuilder().inputUserCommand();
     }
 }

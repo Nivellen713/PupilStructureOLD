@@ -7,22 +7,15 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+// класс для заполнения списков данными (чтение из csv файла)
 public class DataLoader implements IDataLoader{
 
-    private String dataFilePath;
+    private final String DATA_FILE_PATH = "src/resources/students.csv";
 
-    // класс для заполнения списков данными (чтение из csv файла)
-    public DataLoader() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/resources/path.txt"))) {
-            this.dataFilePath = reader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     // добавляем всех учеников из файла без доп критериев
     public void addAllPerson(IDataGroups dataGroup){
-        try (BufferedReader reader = new BufferedReader(new FileReader(dataFilePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(DATA_FILE_PATH))) {
             String line;
             reader.readLine(); // пропускаем первую строку названий столбцов
             while ((line = reader.readLine()) != null) {
